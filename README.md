@@ -32,7 +32,7 @@ enabled=1
 autorefresh=1
 type=rpm-md
 ```
-인증서 오류발생 할 경우 아래와 같으 값 추가
+인증서 오류발생 할 경우 아래와 같은 값 추가
 ```sh
 sslverify=0
 ```
@@ -53,15 +53,46 @@ yum -y install kibana
 vi /etc/elasticsearch/elasticsearch.yml
 ```
 ```
-server.port: 9200
-server.host: "10.250.111.58"
-elasticesearch.host: ["http://10.250.111.58:9200"]
+cluster.name: log-hub
+node.name: log-node-1
+
+network.host: 10.250.111.58
+transport.tcp.port: 9100
+transport.tcp.compress: true
+
+http.port: 9200
+
+discovery.seed_host: ["10.250.111.58:9100"]
+cluster.initial_master_nodes: ["log-node-1"]
 ```
 #### 5-2. elasticsearch jvm.options heap 메모리 사이즈 조절
 ```sh
 vi /etc/elasticsearch/jvm.option
 ```
 ```sh
--Xms1g    =>  Xms4g
--Xmx1g    =>  Xms4g
+-Xms4g
+-Xmx4g
+```
+#### 5-3. logstash.yml 파일 수정
+```sh
+vi /etc/logstash/logstash.yml
+```
+```sh
+```
+#### 5-4. logstash jvm 옵션 heap 메모리 조절 ( 1G => 4G )
+```sh
+vi /etc/logstash/jvm.option
+```
+```sh
+-Xms4g
+-Xmx4g
+```
+#### 5-5. kibana.yml 환경 설정
+```sh
+vi /etc/kibana/kibana.yml
+```
+```sh
+server.port: 5501
+server.host: 0.0.0.0
+elasticsearch.hosts: "http://localhost:9200"
 ```
