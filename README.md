@@ -11,6 +11,7 @@ OpenJDK 64-Bit Server VM (build 25.232-b09, mixed mode)
 ```
 
 ## 2. lasticsearch PGP 키 가져오기
+Elasticsearch 설치시 공개 서명키가 필요하며, 아래와 같이 공개 서명키(public signing key) 를 설치해줍니다.
 
 ```sh
 rpm --import https://artifacts.elastic.co/GPG-KEY-elasticsearch
@@ -31,7 +32,7 @@ enabled=1
 autorefresh=1
 type=rpm-md
 ```
-인증서 오류날시 아래 값 추가
+인증서 오류발생 할 경우 아래와 같으 값 추가
 ```sh
 sslverify=0
 ```
@@ -46,3 +47,8 @@ yum -y install kibana
 ```
 
 ## 5. 환경설정
+
+### Elasticsearch.yml 파일 수정
+```sh
+vi /etc/elasticsearch/elasticsearch.yml
+```
