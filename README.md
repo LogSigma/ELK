@@ -48,7 +48,20 @@ yum -y install kibana
 
 ## 5. 환경설정
 
-### Elasticsearch.yml 파일 수정
+#### 5-1. Elasticsearch.yml 파일 수정
 ```sh
 vi /etc/elasticsearch/elasticsearch.yml
+```
+```
+server.port: 9200
+server.host: "10.250.111.58"
+elasticesearch.host: ["http://10.250.111.58:9200"]
+```
+#### 5-2. elasticsearch jvm.options heap 메모리 사이즈 조절
+```sh
+vi /etc/elasticsearch/jvm.option
+```
+```sh
+-Xms1g    =>  Xms4g
+-Xmx1g    =>  Xms4g
 ```
