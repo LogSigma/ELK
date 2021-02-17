@@ -1,8 +1,7 @@
 # ELK(Elasticsearch+Logstash+Kibana)
 
 ## 1. Java 설치
-+ Elasticsearch 는 Java8 이상이 필요합니다. 만약 java가 설치되어 있지 않으면 jdk 1.8.0-openjdk 파일을 설치합니다.
-
+Elasticsearch 는 Java8 이상이 필요합니다. 만약 java가 설치되어 있지 않으면 jdk 1.8.0-openjdk 파일을 설치합니다.
 
 ```sh
 [root@localhost ~]# java -version
@@ -32,8 +31,9 @@ enabled=1
 autorefresh=1
 type=rpm-md
 ```
-인증서 오류날시
+인증서 오류날시 아래 값 추가
 ```sh
+sslverify=0
 ```
 ## 4. Elasticsearch/ Logstash / Kibana  설치
 
