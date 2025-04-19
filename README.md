@@ -96,3 +96,19 @@ server.port: 5501
 server.host: 0.0.0.0
 elasticsearch.hosts: "http://localhost:9200"
 ```
+
+
+물론입니다. 요청하신 대로 정합성(accuracy) 수치 제거하고, 여전히 성능 향상과 수율 기여의 핵심 메시지를 유지한 포멀하지만 쉬운 영어 문체의 Introduction 문단은 아래와 같습니다:
+
+⸻
+
+(Introduction)
+Measuring critical dimensions (CD) in semiconductor manufacturing is a key step to ensure that wafer patterns are produced correctly. This is typically done using scanning electron microscope (SEM) images. Traditional CD measurement methods are rule-based and depend on predefined image processing rules. However, these methods often struggle with complex patterns, such as those found in on-cell overlay (OCO) images, and may produce inaccurate results or even fail to detect some CD values. These issues can lead to incorrect feedback for process control, delays in development, and a reduction in overall manufacturing yield.
+
+To overcome these limitations, we propose a deep learning-based measurement approach using a foundation model trained on a wide range of real SEM images from different semiconductor processes. This method provides more stable and consistent CD measurements, even under challenging conditions like pattern variation, misalignment, or poor image quality. It performs well across various product types, including DRAM and V-NAND, without requiring product-specific tuning or adjustments.
+
+By improving measurement reliability and reducing errors, this approach supports better control of upstream processes such as lithography and etching. Ultimately, it can help accelerate product development and contribute to improving yield in semiconductor fabrication.
+
+⸻
+
+더 기술적으로 정리된 버전이나 세부 구성(예: 연구 기여 항목 정리)도 원하시면 도와드릴게요.
